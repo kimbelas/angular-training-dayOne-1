@@ -1,0 +1,18 @@
+<div>
+    The title is <strong [ngClass]="{active: styleName === 'custom'}">{{ title }}</strong>
+    <br><br>
+    <input type="text" [value]="title" [placeholder]="'hello'" [disabled]="isDisabled">
+    <br><br>
+    <button type="button" (click)="onClick()">Click me</button>
+    <br><br>
+    <input type="text" [(ngModel)]="twoWay">
+    <h1 [ngStyle]="{color: changeStyleNameColor(), backgroundColor: styleName2 === 'custom1' ? 'orange' : 'red'}">{{ twoWay }}</h1>
+
+    <div *ngIf="twoWay === 'show' && showMessage">
+        This is a message
+    </div>
+    
+    <ul>
+        <li *ngFor="let names of arrNames; let i = index">{{ (i + 1) + '.) ' + names }}</li>
+    </ul>
+</div>
